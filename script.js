@@ -41,11 +41,24 @@ function updateDonut(netPct) {
     }
 }
 
+function setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, taxPct) {
+    document.getElementById('grossAnnual').textContent       = fmt(grossAnnual);
+    document.getElementById('grossVakantiegeld').textContent  = fmt(grossVak);
+    document.getElementById('taxRateLabel').textContent      = (taxRate * 100).toFixed(2).replace('.', ',');
+    document.getElementById('taxAmount').textContent         = '− ' + fmt(taxAmount);
+    document.getElementById('netVakantiegeld').textContent   = fmt(netVak);
+    document.getElementById('netVakantiegeld2').innerHTML    = '<strong>' + fmt(netVak) + '</strong>';
+    document.getElementById('donut-pct').textContent         = netPct + '%';
+    document.getElementById('pct-net').textContent           = netPct + '%';
+    document.getElementById('pct-tax').textContent           = taxPct + '%';
+    updateDonut(netPct);
+}
+
 function calculate() {
     var input = parseFloat(document.getElementById('salary').value);
+
     if (!input || input <= 0) {
-        document.getElementById('result-empty').style.display = 'block';
-        document.getElementById('result-filled').style.display = 'none';
+        setDisplay(0, 0, 0, 0, 0, 0, 0);
         return;
     }
 
@@ -57,20 +70,7 @@ function calculate() {
     var netPct      = Math.round((netVak / grossVak) * 100);
     var taxPct      = 100 - netPct;
 
-    document.getElementById('grossAnnual').textContent       = fmt(grossAnnual);
-    document.getElementById('grossVakantiegeld').textContent  = fmt(grossVak);
-    document.getElementById('taxRateLabel').textContent      = (taxRate * 100).toFixed(2).replace('.', ',');
-    document.getElementById('taxAmount').textContent         = '− ' + fmt(taxAmount);
-    document.getElementById('netVakantiegeld').textContent   = fmt(netVak);
-    document.getElementById('netVakantiegeld2').innerHTML    = '<strong>' + fmt(netVak) + '</strong>';
-    document.getElementById('donut-pct').textContent         = netPct + '%';
-    document.getElementById('pct-net').textContent           = netPct + '%';
-    document.getElementById('pct-tax').textContent           = taxPct + '%';
-
-    updateDonut(netPct);
-
-    document.getElementById('result-empty').style.display  = 'none';
-    document.getElementById('result-filled').style.display = 'block';
+    setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, taxPct);
 }
 
 function acceptCookies() {
