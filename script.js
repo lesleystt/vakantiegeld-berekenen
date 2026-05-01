@@ -1,22 +1,19 @@
 'use strict';
 
 var salaryType = 'monthly';
+var CIRCUMFERENCE = 2 * Math.PI * 30;
+var els;
 
 function setSalaryType(type) {
     salaryType = type;
-    document.getElementById('btn-monthly').classList.toggle('active', type === 'monthly');
-    document.getElementById('btn-annual').classList.toggle('active', type === 'annual');
-    document.getElementById('salary-label').textContent =
-        type === 'monthly' ? 'Jouw bruto maandsalaris' : 'Jouw bruto jaarsalaris';
-    document.getElementById('salary').placeholder = '0';
+    els.btnMonthly.classList.toggle('active', type === 'monthly');
+    els.btnAnnual.classList.toggle('active', type === 'annual');
+    els.salaryLabel.textContent = type === 'monthly' ? 'Jouw bruto maandsalaris' : 'Jouw bruto jaarsalaris';
     calculate();
 }
 
 function stepSalary(step) {
-    var input = document.getElementById('salary');
-    var val = parseFloat(input.value) || 0;
-    val = Math.max(0, val + step);
-    input.value = val;
+    els.salary.value = Math.max(0, (parseFloat(els.salary.value) || 0) + step);
     calculate();
 }
 
@@ -33,57 +30,66 @@ function fmt(amount) {
 }
 
 function updateDonut(netPct) {
-    var circumference = 2 * Math.PI * 30; // r=30 → 188.5
-    var filled = circumference * (netPct / 100);
-    var donut = document.getElementById('donut-fill');
-    if (donut) {
-        donut.setAttribute('stroke-dasharray', filled + ' ' + (circumference - filled));
-    }
+    var filled = CIRCUMFERENCE * (netPct / 100);
+    els.donutFill.setAttribute('stroke-dasharray', filled + ' ' + (CIRCUMFERENCE - filled));
 }
 
 function setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, taxPct) {
-    document.getElementById('grossAnnual').textContent       = fmt(grossAnnual);
-    document.getElementById('grossVakantiegeld').textContent  = fmt(grossVak);
-    document.getElementById('taxRateLabel').textContent      = (taxRate * 100).toFixed(2).replace('.', ',');
-    document.getElementById('taxAmount').textContent         = '− ' + fmt(taxAmount);
-    document.getElementById('netVakantiegeld').textContent   = fmt(netVak);
-    document.getElementById('netVakantiegeld2').innerHTML    = '<strong>' + fmt(netVak) + '</strong>';
-    document.getElementById('donut-pct').textContent         = netPct + '%';
-    document.getElementById('pct-net').textContent           = netPct + '%';
-    document.getElementById('pct-tax').textContent           = taxPct + '%';
+    var netFmt = fmt(netVak);
+    els.grossAnnual.textContent          = fmt(grossAnnual);
+    els.grossVakantiegeld.textContent     = fmt(grossVak);
+    els.taxRateLabel.textContent          = (taxRate * 100).toFixed(2).replace('.', ',');
+    els.taxAmount.textContent             = '− ' + fmt(taxAmount);
+    els.netVakantiegeld.textContent       = netFmt;
+    els.netVakantiegeld2Strong.textContent = netFmt;
+    els.donutPct.textContent              = netPct + '%';
+    els.pctNet.textContent                = netPct + '%';
+    els.pctTax.textContent                = taxPct + '%';
     updateDonut(netPct);
 }
 
 function calculate() {
-    var input = parseFloat(document.getElementById('salary').value);
-
-    if (!input || input <= 0) {
+    var input = parseFloat(els.salary.value);
+    if (!input) {
         setDisplay(0, 0, 0, 0, 0, 0, 0);
         return;
     }
-
     var grossAnnual = salaryType === 'monthly' ? input * 12 : input;
     var grossVak    = grossAnnual * 0.08;
     var taxRate     = getTaxRate(grossAnnual);
     var taxAmount   = grossVak * taxRate;
     var netVak      = grossVak - taxAmount;
     var netPct      = Math.round((netVak / grossVak) * 100);
-    var taxPct      = 100 - netPct;
-
-    setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, taxPct);
+    setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, 100 - netPct);
 }
 
 function acceptCookies() {
     localStorage.setItem('cookies_accepted', '1');
-    document.getElementById('cookie-banner').style.display = 'none';
+    els.cookieBanner.style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    els = {
+        salary:               document.getElementById('salary'),
+        btnMonthly:           document.getElementById('btn-monthly'),
+        btnAnnual:            document.getElementById('btn-annual'),
+        salaryLabel:          document.getElementById('salary-label'),
+        grossAnnual:          document.getElementById('grossAnnual'),
+        grossVakantiegeld:    document.getElementById('grossVakantiegeld'),
+        taxRateLabel:         document.getElementById('taxRateLabel'),
+        taxAmount:            document.getElementById('taxAmount'),
+        netVakantiegeld:      document.getElementById('netVakantiegeld'),
+        netVakantiegeld2Strong: document.querySelector('#netVakantiegeld2 strong'),
+        donutPct:             document.getElementById('donut-pct'),
+        pctNet:               document.getElementById('pct-net'),
+        pctTax:               document.getElementById('pct-tax'),
+        donutFill:            document.getElementById('donut-fill'),
+        cookieBanner:         document.getElementById('cookie-banner'),
+    };
+
     if (!localStorage.getItem('cookies_accepted')) {
-        document.getElementById('cookie-banner').style.display = 'block';
+        els.cookieBanner.style.display = 'block';
     }
-    document.getElementById('salary').addEventListener('input', calculate);
-    document.getElementById('salary').addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') calculate();
-    });
+
+    els.salary.addEventListener('input', calculate);
 });
