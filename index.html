@@ -32,9 +32,37 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-logo">
-            <div class="logo-icon">💶</div>
+            <svg class="logo-svg" viewBox="0 0 70 55" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="calcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#a78bfa"/>
+                        <stop offset="100%" stop-color="#5b21b6"/>
+                    </linearGradient>
+                    <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#7c3aed"/>
+                    </linearGradient>
+                </defs>
+                <!-- Calculator body -->
+                <rect x="0" y="0" width="44" height="44" rx="10" fill="url(#calcGrad)"/>
+                <!-- Display -->
+                <rect x="7" y="7" width="30" height="9" rx="2" fill="white" opacity="0.95"/>
+                <!-- Buttons rij 1 -->
+                <rect x="7"  y="21" width="7" height="7" rx="1.5" fill="white" opacity="0.95"/>
+                <rect x="18" y="21" width="7" height="7" rx="1.5" fill="white" opacity="0.95"/>
+                <rect x="29" y="21" width="7" height="7" rx="1.5" fill="white" opacity="0.95"/>
+                <!-- Buttons rij 2 -->
+                <rect x="7"  y="32" width="7" height="7" rx="1.5" fill="white" opacity="0.95"/>
+                <rect x="18" y="32" width="7" height="7" rx="1.5" fill="white" opacity="0.95"/>
+                <rect x="29" y="32" width="7" height="7" rx="1.5" fill="white" opacity="0.95"/>
+                <!-- Euro munt -->
+                <circle cx="39" cy="39" r="14" fill="url(#coinGrad)" stroke="white" stroke-width="2.5"/>
+                <text x="39" y="44" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">€</text>
+            </svg>
+            <div class="logo-divider"></div>
             <div class="logo-text">
-                <span class="logo-main">Vakantiegeld<span class="logo-nl">Berekening.nl</span></span>
+                <span class="logo-main">Vakantiegeld</span>
+                <span class="logo-nl">Berekening.nl</span>
             </div>
         </div>
         <div class="nav-links">

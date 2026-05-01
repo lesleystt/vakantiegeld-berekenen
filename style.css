@@ -53,11 +53,12 @@ a:hover { text-decoration: underline; }
     display: flex; align-items: center; justify-content: space-between;
     height: 64px;
 }
-.nav-logo { display: flex; align-items: center; gap: .6rem; }
-.logo-icon { font-size: 1.6rem; }
-.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-.logo-main { font-weight: 800; font-size: 1rem; color: var(--primary-dark); display: flex; flex-direction: column; line-height: 1.2; }
-.logo-nl   { font-size: .72rem; color: var(--primary); font-weight: 700; }
+.nav-logo   { display: flex; align-items: center; gap: .75rem; }
+.logo-svg   { width: 52px; height: 52px; flex-shrink: 0; }
+.logo-divider { width: 1px; height: 36px; background: #d1d5db; flex-shrink: 0; }
+.logo-text  { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-main  { font-weight: 800; font-size: 1.25rem; color: #2e0069; letter-spacing: -.01em; }
+.logo-nl    { font-size: 1.05rem; color: var(--primary); font-weight: 700; }
 .nav-links { display: flex; gap: 1.5rem; }
 .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text-muted); }
 .nav-links a:hover { color: var(--primary); text-decoration: none; }
