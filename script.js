@@ -8,7 +8,7 @@ function setSalaryType(type) {
     document.getElementById('btn-annual').classList.toggle('active', type === 'annual');
     document.getElementById('salary-label').textContent =
         type === 'monthly' ? 'Jouw bruto maandsalaris' : 'Jouw bruto jaarsalaris';
-    document.getElementById('salary').placeholder = type === 'monthly' ? '3.500' : '42.000';
+    document.getElementById('salary').placeholder = '0';
     calculate();
 }
 
