@@ -16,6 +16,9 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebApplication","name":"Vakantiegeld Calculator 2026","description":"Bereken je netto vakantiegeld voor 2026","url":"https://www.vakantiegeldberekening.nl/","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0"}}
     </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wanneer wordt vakantiegeld uitbetaald?","acceptedAnswer":{"@type":"Answer","text":"Vakantiegeld wordt doorgaans uitbetaald in mei, samen met het reguliere salaris. De exacte datum hangt af van je werkgever en de geldende cao."}},{"@type":"Question","name":"Hoeveel procent is vakantiegeld?","acceptedAnswer":{"@type":"Answer","text":"Het wettelijke minimum is 8% van het bruto jaarsalaris, vastgelegd in de Wet minimumloon en minimumvakantiebijslag. Sommige cao's kennen een hoger percentage."}},{"@type":"Question","name":"Waarom betaal ik zoveel belasting over mijn vakantiegeld?","acceptedAnswer":{"@type":"Answer","text":"Vakantiegeld valt onder de bijzondere beloningen. Hiervoor geldt een apart belastingtarief dat varieert van 32,88% tot 49,50% in 2026, afhankelijk van je bruto jaarsalaris."}},{"@type":"Question","name":"Bouw ik vakantiegeld op tijdens ziekte?","acceptedAnswer":{"@type":"Answer","text":"Ja, ook tijdens ziekte bouw je vakantiegeld op over het doorbetaalde loon. Dit is wettelijk geregeld."}},{"@type":"Question","name":"Kan ik vakantiegeld maandelijks ontvangen?","acceptedAnswer":{"@type":"Answer","text":"Ja, als je werkgever of cao dit toestaat. Je ontvangt dan elke maand circa 0,67% van je maandsalaris als vakantiegeld bovenop je loon."}},{"@type":"Question","name":"Wat is het verschil tussen vakantiegeld en vakantiedagen?","acceptedAnswer":{"@type":"Answer","text":"Vakantiegeld is een financiële uitkering van minimaal 8% van je bruto jaarsalaris. Vakantiedagen zijn vrije dagen (minimaal 20 bij fulltime). Het zijn twee afzonderlijke wettelijke rechten."}}]}
+    </script>
 </head>
 <body>
 
@@ -66,6 +69,7 @@
         </div>
         <div class="nav-links">
             <a href="#uitleg">Uitleg</a>
+            <a href="#faq">FAQ</a>
             <a href="privacyverklaring.html">Privacy</a>
         </div>
     </div>
@@ -79,8 +83,13 @@
 
     <div class="hero-container">
         <div class="hero-headline">
-            <h1>Bereken je vakantiegeld, gewoon <span class="highlight">je salaris invullen.</span> Probeer het nu!</h1>
+            <h1>Hoeveel vakantiegeld krijg jij netto? <span class="highlight">Bereken het in 10 seconden.</span></h1>
         </div>
+        <p class="hero-sub">
+            <span>Gratis calculator</span>
+            <span>Officiële tarieven Belastingdienst 2026</span>
+            <span>Direct resultaat</span>
+        </p>
 
         <div class="calc-outer">
             <!-- Linker advertentie -->
@@ -192,7 +201,7 @@
 </div>
 
 <!-- Feature cards -->
-<section class="features-section">
+<section class="features-section reveal">
     <div class="section-container">
         <div class="features-grid">
             <div class="feature-card">
@@ -240,7 +249,7 @@
 </div>
 
 <!-- Uitleg sectie -->
-<section class="info-section" id="uitleg">
+<section class="info-section reveal" id="uitleg">
     <div class="section-container">
         <h2 class="section-title">Begrijp je vakantiegeld</h2>
         <p class="section-sub">De belangrijkste begrippen voor een correcte berekening</p>
@@ -279,7 +288,7 @@
 </section>
 
 <!-- Tarieven tabel -->
-<section class="rates-section">
+<section class="rates-section reveal">
     <div class="section-container">
         <h2 class="section-title">Belastingtarieven vakantiegeld 2026</h2>
         <p class="section-sub">Tabel bijzondere beloningen — jouw tarief hangt af van je jaarsalaris</p>
@@ -317,7 +326,7 @@
 </div>
 
 <!-- Waarom deze calculator -->
-<section class="why-section">
+<section class="why-section reveal">
     <div class="section-container">
         <h2 class="section-title">Waarom deze calculator?</h2>
         <p class="section-sub">Gebouwd voor nauwkeurigheid, ontworpen voor eenvoud</p>
@@ -347,6 +356,78 @@
                 <div class="why-badge">100% Gratis</div>
                 <p>Of je nu op je telefoon, tablet of computer zit — onze calculator werkt overal. Volledig gratis en zonder registratie.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ sectie -->
+<section class="faq-section reveal" id="faq">
+    <div class="section-container">
+        <h2 class="section-title">Veelgestelde vragen</h2>
+        <p class="section-sub">Alles wat je wilt weten over vakantiegeld in Nederland</p>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Wanneer wordt vakantiegeld uitbetaald?
+                    <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <p>Vakantiegeld wordt doorgaans uitbetaald in mei, samen met het reguliere salaris. De exacte datum hangt af van je werkgever en de geldende cao. Sommige werkgevers betalen in juni of hanteren een andere afspraakvorm.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Hoeveel procent is vakantiegeld?
+                    <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <p>Het wettelijke minimum is 8% van het bruto jaarsalaris. Dit is vastgelegd in de Wet minimumloon en minimumvakantiebijslag. Sommige cao's of werkgevers kennen een hoger percentage — check je arbeidsovereenkomst of cao.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Waarom betaal ik zoveel belasting over mijn vakantiegeld?
+                    <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <p>Vakantiegeld valt onder de "bijzondere beloningen". Hiervoor geldt een apart belastingtarief (tabel bijzondere beloningen), omdat het als een eenmalige extra uitkering wordt beschouwd. Dit tarief varieert van 32,88% tot 49,50% in 2026, afhankelijk van je bruto jaarsalaris.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Bouw ik vakantiegeld op tijdens ziekte?
+                    <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <p>Ja, ook tijdens ziekte bouw je vakantiegeld op over het doorbetaalde loon. Dit is wettelijk geregeld. De opbouw stopt niet bij ziekte, zolang je loon (gedeeltelijk) doorbetaald wordt.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Kan ik vakantiegeld maandelijks ontvangen?
+                    <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <p>Ja, dit is mogelijk als je werkgever of cao dit toestaat. Je ontvangt dan elke maand 1/12 van je jaarlijkse vakantiegeld (circa 0,67% van je maandsalaris) bovenop je reguliere loon. Let op: over maandelijks uitbetaald vakantiegeld kan een ander belastingtarief gelden.</p>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Wat is het verschil tussen vakantiegeld en vakantiedagen?
+                    <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <p>Vakantiegeld is een financiële uitkering van minimaal 8% van je bruto jaarsalaris. Vakantiedagen zijn vrije dagen waar je wettelijk recht op hebt (minimaal 20 bij een fulltime dienstverband). Het zijn twee afzonderlijke wettelijke rechten — vakantiegeld staat los van je vakantiedagen.</p>
+                </div></div>
+            </div>
+
         </div>
     </div>
 </section>
