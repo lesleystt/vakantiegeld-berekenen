@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakantiegeld Berekenen 2026 – Netto Vakantiegeld Calculator</title>
+    <meta name="description" content="Bereken snel je netto vakantiegeld 2026. Gratis online calculator voor werknemers in Nederland. Direct resultaat, inclusief belastingpercentage.">
+    <meta name="keywords" content="vakantiegeld berekenen, netto vakantiegeld 2026, vakantiegeld calculator, hoeveel vakantiegeld krijg ik">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.vakantiegeldberekening.nl/">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense – vervang ca-pub-XXXXXXXXXXXXXXXX door jouw publisher ID -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <!-- Structured data voor Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Vakantiegeld Calculator 2026",
+        "description": "Bereken je netto vakantiegeld voor 2026",
+        "url": "https://www.vakantiegeldberekening.nl/",
+        "applicationCategory": "FinanceApplication",
+        "offers": { "@type": "Offer", "price": "0" }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Cookie consent banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display:none">
+        <div class="cookie-inner">
+            <p>Wij gebruiken cookies voor advertenties en het verbeteren van de website. Lees onze <a href="cookies.html">cookieverklaring</a>.</p>
+            <button class="btn-accept" onclick="acceptCookies()">Akkoord</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">💶</div>
+            <h1>Vakantiegeld Berekenen 2026</h1>
+            <p class="tagline">Bereken in 10 seconden hoeveel je netto ontvangt</p>
+        </div>
+    </header>
+
+    <!-- Advertentie – leaderboard boven calculator -->
+    <div class="ad-zone ad-top">
+        <div class="container">
+            <!-- AdSense code hier – voorbeeld:
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
+            <div class="ad-placeholder">Advertentie</div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container layout">
+
+            <!-- Calculator -->
+            <div class="main-col">
+                <div class="card calculator-card">
+                    <h2>Netto vakantiegeld berekenen</h2>
+
+                    <div class="form-group">
+                        <label for="salaryType">Ik voer in:</label>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" id="btn-monthly" onclick="setSalaryType('monthly')">Maandsalaris</button>
+                            <button class="toggle-btn" id="btn-annual" onclick="setSalaryType('annual')">Jaarsalaris</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary" id="salary-label">Bruto maandsalaris (€)</label>
+                        <div class="input-wrapper">
+                            <span class="euro-sign">€</span>
+                            <input type="number" id="salary" placeholder="3.500" min="0" max="1000000" step="100" oninput="calculate()">
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculate()">Bereken netto vakantiegeld →</button>
+                </div>
+
+                <!-- Resultaten -->
+                <div class="card results-card" id="results" style="display:none">
+                    <h2>Jouw netto vakantiegeld 2026</h2>
+
+                    <div class="result-highlight">
+                        <span class="result-label-big">Netto te ontvangen</span>
+                        <span class="result-amount" id="netVakantiegeld">€ 0</span>
+                    </div>
+
+                    <div class="result-breakdown">
+                        <div class="breakdown-row">
+                            <span>Bruto jaarsalaris</span>
+                            <span id="grossAnnual">€ 0</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span>Bruto vakantiegeld (8%)</span>
+                            <span id="grossVakantiegeld">€ 0</span>
+                        </div>
+                        <div class="breakdown-row tax-row">
+                            <span>Loonheffing (<span id="taxRateLabel">0</span>%)</span>
+                            <span id="taxAmount">- € 0</span>
+                        </div>
+                        <div class="breakdown-row total-row">
+                            <span><strong>Netto vakantiegeld</strong></span>
+                            <span id="netVakantiegeld2"><strong>€ 0</strong></span>
+                        </div>
+                    </div>
+
+                    <p class="disclaimer">* Indicatieve berekening op basis van de tabel bijzondere beloningen 2026. Exacte bedragen kunnen afwijken.</p>
+                </div>
+
+                <!-- Uitleg -->
+                <div class="card info-card">
+                    <h2>Wat is vakantiegeld?</h2>
+                    <p>Vakantiegeld (vakantietoeslag) is een wettelijk verplichte uitkering voor werknemers in Nederland. Werkgevers zijn verplicht minimaal <strong>8% van je bruto jaarsalaris</strong> als vakantiegeld uit te betalen.</p>
+
+                    <h3>Wanneer wordt het uitbetaald?</h3>
+                    <p>Vakantiegeld wordt meestal in <strong>mei</strong> uitbetaald over het jaar van juni tot en met mei. De exacte uitbetalingsdatum staat in je arbeidscontract of cao.</p>
+
+                    <h3>Hoe wordt het berekend?</h3>
+                    <ul>
+                        <li><strong>Bruto vakantiegeld</strong> = 8% × bruto jaarsalaris</li>
+                        <li>Over het vakantiegeld betaal je <strong>loonheffing</strong> volgens de tabel bijzondere beloningen</li>
+                        <li>Het belastingpercentage hangt af van je totale inkomen</li>
+                        <li><strong>Netto vakantiegeld</strong> = bruto vakantiegeld − loonheffing</li>
+                    </ul>
+
+                    <h3>Belastingtarieven vakantiegeld 2026</h3>
+                    <table class="tax-table">
+                        <thead>
+                            <tr>
+                                <th>Bruto jaarsalaris</th>
+                                <th>Tarief</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>t/m € 38.441</td><td>35,82%</td></tr>
+                            <tr><td>€ 38.441 – € 76.817</td><td>37,48%</td></tr>
+                            <tr><td>Boven € 76.817</td><td>49,50%</td></tr>
+                        </tbody>
+                    </table>
+                    <p><small>Tarieven zijn gebaseerd op de tabel bijzondere beloningen 2026.</small></p>
+                </div>
+            </div>
+
+            <!-- Zijbalk met advertentie -->
+            <aside class="side-col">
+                <div class="ad-zone ad-sidebar">
+                    <!-- AdSense sidebar code hier -->
+                    <div class="ad-placeholder ad-placeholder-sidebar">Advertentie</div>
+                </div>
+
+                <div class="card tip-card">
+                    <h3>💡 Wist je dat?</h3>
+                    <ul>
+                        <li>Je bouwt vakantiegeld op over verlof en ziekte</li>
+                        <li>Sommige cao's geven meer dan 8%</li>
+                        <li>Deeltijdwerkers hebben ook recht op 8%</li>
+                        <li>Het wordt belast als bijzondere beloning</li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- Advertentie onder de calculator -->
+        <div class="ad-zone ad-bottom">
+            <div class="container">
+                <!-- AdSense code hier -->
+                <div class="ad-placeholder">Advertentie</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 VakantiegeldBerekenen &nbsp;|&nbsp; <a href="privacyverklaring.html">Privacyverklaring</a> &nbsp;|&nbsp; <a href="cookies.html">Cookiebeleid</a></p>
+            <p><small>De berekeningen op deze website zijn indicatief en bedoeld als richtlijn. Raadpleeg voor exacte bedragen je werkgever of een belastingadviseur. Tarieven: tabel bijzondere beloningen 2026 (Belastingdienst).</small></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
