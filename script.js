@@ -111,6 +111,11 @@ function acceptCookies() {
     els.cookieBanner.style.display = 'none';
 }
 
+function declineCookies() {
+    localStorage.setItem('cookies_accepted', '0');
+    els.cookieBanner.style.display = 'none';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     els = {
         salary:                 document.getElementById('salary'),
