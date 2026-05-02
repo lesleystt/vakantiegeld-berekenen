@@ -139,7 +139,20 @@ document.addEventListener('DOMContentLoaded', function () {
         els.cookieBanner.style.display = 'block';
     }
 
+    els.salary.value = 3500;
+    calculate();
+
     els.salary.addEventListener('input', calculate);
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 
     if (typeof IntersectionObserver !== 'undefined') {
         var revealObserver = new IntersectionObserver(function(entries) {

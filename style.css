@@ -125,6 +125,7 @@ a:hover { text-decoration: underline; }
 }
 .highlight { color: var(--primary); }
 .hero .highlight { color: #c4b5fd; }
+.hero-highlight { color: #c4b5fd; display: block; font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-weight: 600; margin-top: .4rem; opacity: .85; }
 
 .hero-sub {
     text-align: center;
@@ -573,3 +574,120 @@ header h1 { font-size: 1.05rem; font-weight: 700; }
 .article-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
 .article-card a.read-more { font-size: .85rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: .3rem; }
 .article-card a.read-more:hover { text-decoration: none; gap: .5rem; }
+
+/* ===== Trust strip ===== */
+.trust-strip {
+    background: #f0fdf4;
+    border-top: 1px solid #d1fae5;
+    border-bottom: 1px solid #d1fae5;
+    padding: .85rem 1.5rem;
+}
+.trust-inner {
+    max-width: 860px; margin: 0 auto;
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+}
+.trust-item {
+    display: flex; align-items: center; gap: .5rem;
+    font-size: .88rem; font-weight: 600; color: #065f46;
+}
+.trust-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* ===== Explainer section ===== */
+.explainer-section { background: white; padding: 3rem 1.5rem 2rem; }
+.explainer-inner { max-width: 860px; margin: 0 auto; }
+.explainer-inner h2 { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 1rem; }
+.explainer-inner p { font-size: .97rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+.explainer-inner strong { color: var(--text); }
+
+.explainer-details {
+    margin-top: 1.25rem;
+    border: 1.5px solid var(--primary-light);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.explainer-details summary {
+    padding: 1rem 1.25rem;
+    font-size: .92rem; font-weight: 700; color: var(--primary-dark);
+    cursor: pointer; list-style: none;
+    background: var(--primary-pale);
+    display: flex; align-items: center; gap: .5rem;
+}
+.explainer-details summary::before { content: '▶'; font-size: .7rem; transition: transform .2s; }
+.explainer-details[open] summary::before { transform: rotate(90deg); }
+.explainer-details summary::-webkit-details-marker { display: none; }
+.explainer-details-body {
+    padding: 1.1rem 1.25rem;
+    background: white;
+}
+.explainer-details-body ol { padding-left: 1.4rem; margin-bottom: .75rem; }
+.explainer-details-body li { font-size: .9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: .3rem; }
+.explainer-details-body li strong { color: var(--text); }
+.explainer-details-body p { font-size: .88rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+/* ===== Salary examples grid ===== */
+.examples-section { padding: 4rem 1.5rem; background: white; }
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+@media (max-width: 900px) { .examples-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .examples-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 400px) { .examples-grid { grid-template-columns: 1fr; } }
+
+.example-card {
+    display: flex; flex-direction: column;
+    background: var(--primary-pale);
+    border: 1.5px solid var(--primary-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1rem;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+    position: relative;
+}
+.example-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(124,58,237,.15); border-color: var(--primary); text-decoration: none; }
+.example-card-featured { border-color: var(--primary); background: var(--primary-light); }
+.example-badge {
+    position: absolute; top: -1px; right: 1rem;
+    background: var(--primary); color: white;
+    font-size: .7rem; font-weight: 700; padding: .2rem .6rem;
+    border-radius: 0 0 8px 8px;
+}
+.example-salary { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: .5rem; }
+.example-salary span { font-size: .8rem; font-weight: 500; color: var(--text-muted); }
+.example-vak { font-size: .78rem; color: var(--text-muted); margin-bottom: .3rem; }
+.example-vak strong { color: var(--text); }
+.example-net { font-size: .85rem; color: var(--text-muted); margin-bottom: .75rem; }
+.example-net-val { color: #059669; font-size: 1rem; }
+.example-link { font-size: .78rem; font-weight: 700; color: var(--primary); margin-top: auto; }
+
+/* ===== Situations grid ===== */
+.situations-section { padding: 4rem 1.5rem; background: var(--primary-pale); }
+.situations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+@media (max-width: 900px) { .situations-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .situations-grid { grid-template-columns: 1fr; } }
+
+.situation-card {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    text-decoration: none;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.situation-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(91,33,182,.1); border-color: var(--primary); text-decoration: none; }
+.situation-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--primary-light); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+.situation-icon svg { width: 22px; height: 22px; color: var(--primary); }
+.situation-content { flex: 1; }
+.situation-content h3 { font-size: .95rem; font-weight: 700; color: var(--text); margin-bottom: .25rem; }
+.situation-content p { font-size: .82rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+.situation-arrow { font-size: 1rem; color: var(--primary); font-weight: 700; flex-shrink: 0; align-self: center; }

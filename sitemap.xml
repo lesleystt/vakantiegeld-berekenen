@@ -1,49 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/</loc>
+        <loc>https://vakantiegeldberekening.nl/</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/wat-is-vakantiegeld.html</loc>
+        <loc>https://vakantiegeldberekening.nl/wat-is-vakantiegeld.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/vakantiegeld-2026.html</loc>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-2026.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/wanneer-vakantiegeld-uitbetaald.html</loc>
+        <loc>https://vakantiegeldberekening.nl/wanneer-vakantiegeld-uitbetaald.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/over-ons.html</loc>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-2500-bruto.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-3000-bruto.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-3500-bruto.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-4500-bruto.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-6000-bruto.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-parttime.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-uitzendkracht.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-bijbaan.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-uitkering.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/vakantiegeld-ontslag.html</loc>
+        <lastmod>2026-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vakantiegeldberekening.nl/over-ons.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/contact.html</loc>
+        <loc>https://vakantiegeldberekening.nl/contact.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/privacyverklaring.html</loc>
+        <loc>https://vakantiegeldberekening.nl/privacyverklaring.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://www.vakantiegeldberekening.nl/cookies.html</loc>
+        <loc>https://vakantiegeldberekening.nl/cookies.html</loc>
         <lastmod>2026-05-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
