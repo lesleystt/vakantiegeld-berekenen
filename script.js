@@ -148,9 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
         els.cookieBanner.style.display = 'block';
     }
 
-    els.salary.value = 3500;
-    // Don't call calculate on page load — wait for user to click the Calculate button
-    // calculate();
+    var resultsCard = document.getElementById('results-card');
+    if (resultsCard) resultsCard.style.display = 'none';
 
     els.salary.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') calculateFromButton();
