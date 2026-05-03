@@ -4,17 +4,23 @@ var salaryType = 'monthly';
 var CIRCUMFERENCE = 2 * Math.PI * 30;
 var els;
 var animVals = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;
+var resultVisible = false;
 
 function setSalaryType(type) {
     salaryType = type;
     els.btnMonthly.classList.toggle('active', type === 'monthly');
     els.btnAnnual.classList.toggle('active', type === 'annual');
     els.salaryLabel.textContent = type === 'monthly' ? 'Jouw bruto maandsalaris' : 'Jouw bruto jaarsalaris';
-    calculate();
+    if (resultVisible) calculate();
 }
 
 function stepSalary(step) {
     els.salary.value = Math.max(0, (parseFloat(els.salary.value) || 0) + step);
+    if (resultVisible) calculate();
+}
+
+function calculateFromButton() {
+    resultVisible = true;
     calculate();
 }
 
@@ -72,9 +78,11 @@ function setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, t
 
 function calculate() {
     var input = parseFloat(els.salary.value);
+    var resultsCard = document.getElementById('results-card');
     if (!input) {
         setDisplay(0, 0, 0, 0, 0, 0, 0);
         highlightBracket(0);
+        if (resultsCard) resultsCard.style.display = 'none';
         return;
     }
     var grossAnnual = salaryType === 'monthly' ? input * 12 : input;
@@ -85,6 +93,7 @@ function calculate() {
     var netPct      = Math.round((netVak / grossVak) * 100);
     setDisplay(grossAnnual, grossVak, taxRate, taxAmount, netVak, netPct, 100 - netPct);
     highlightBracket(grossAnnual);
+    if (resultsCard) resultsCard.style.display = 'block';
 }
 
 function highlightBracket(grossAnnual) {
@@ -140,9 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     els.salary.value = 3500;
-    calculate();
+    // Don't call calculate on page load — wait for user to click the Calculate button
+    // calculate();
 
-    els.salary.addEventListener('input', calculate);
+    els.salary.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') calculateFromButton();
+    });
 
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
