@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow:
 
-Sitemap: https://www.vakantiegeldberekening.nl/sitemap.xml
+Sitemap: https://vakantiegeldberekening.nl/sitemap.xml
