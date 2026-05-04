@@ -148,8 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
         els.cookieBanner.style.display = 'block';
     }
 
-    var resultsCard = document.getElementById('results-card');
-    if (resultsCard) resultsCard.style.display = 'none';
+    els.salary.value = 3500;
+    calculate();
 
     els.salary.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') calculateFromButton();
