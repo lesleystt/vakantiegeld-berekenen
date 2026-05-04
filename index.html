@@ -38,9 +38,9 @@
     <meta name="twitter:description" content="Bereken in 10 seconden hoeveel vakantiegeld jij netto overhoudt. Officiële tarieven Belastingdienst 2026. Gratis.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
     <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6420854482230679" crossorigin="anonymous"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -529,9 +529,15 @@
     <div class="section-container">
         <h2 class="section-title">Wat doe jij met je vakantiegeld?</h2>
         <p class="section-sub">Populaire aankopen in mei 2026</p>
-        <div class="affiliate-grid">
-            <script type="text/javascript">
-            var bol_sitebar_v2={
+        <div class="affiliate-grid" id="bol-container"></div>
+        <script>
+        (function(){
+          var container = document.getElementById('bol-container');
+          var loaded = false;
+          function loadBol() {
+            if (loaded) return;
+            loaded = true;
+            window.bol_sitebar_v2 = {
               "id": "bol_1777858483783",
               "baseUrl": "partner.bol.com",
               "productId": "9300000171550609",
@@ -545,9 +551,20 @@
               "linkName": "Philips%20Dual%20Airfryer%20-%20Dubbele%20Mand%20-%209L%20-%20To...",
               "linkSubId": ""
             };
-            </script>
-            <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1777858483783"></script>
-        </div>
+            var s = document.createElement('script');
+            s.src = 'https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js';
+            s.id = 'bol_1777858483783';
+            container.appendChild(s);
+          }
+          if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function(entries, obs) {
+              if (entries[0].isIntersecting) { loadBol(); obs.disconnect(); }
+            }, {rootMargin: '300px'}).observe(container);
+          } else {
+            window.addEventListener('load', loadBol);
+          }
+        })();
+        </script>
     </div>
 </section>
 
@@ -659,5 +676,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6420854482230679" crossorigin="anonymous"></script>
 </body>
 </html>
