@@ -115,15 +115,6 @@ function toggleFaq(btn) {
     if (!isOpen) item.classList.add('open');
 }
 
-function acceptCookies() {
-    localStorage.setItem('cookies_accepted', '1');
-    els.cookieBanner.style.display = 'none';
-}
-
-function declineCookies() {
-    localStorage.setItem('cookies_accepted', '0');
-    els.cookieBanner.style.display = 'none';
-}
 
 document.addEventListener('DOMContentLoaded', function () {
     els = {
@@ -144,9 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cookieBanner:           document.getElementById('cookie-banner'),
     };
 
-    if (!localStorage.getItem('cookies_accepted')) {
-        els.cookieBanner.style.display = 'block';
-    }
 
     els.salary.value = 3500;
     calculate();
